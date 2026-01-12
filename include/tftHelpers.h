@@ -32,9 +32,9 @@ TFT_eSPI_Button muteBtn, prevBtn, nextBtn, brightBtn, dimBtn;
 void initDisplay()
 {
 	// check if calibration file exists and size is correct
-	if (LITTLEFS.begin(false) && LITTLEFS.exists("/TouchCalData1.txt"))
+	if (LittleFS.begin(false) && LittleFS.exists("/TouchCalData1.txt"))
 	{
-		File f = LITTLEFS.open("/TouchCalData1.txt", "r");
+		File f = LittleFS.open("/TouchCalData1.txt", "r");
 		if (f)
 		{
 			uint16_t calData[5];
@@ -427,7 +427,7 @@ void getMuteButtonPress()
 	}
 }
 
-void displayStationName(char *stationName)
+void displayStationName(const char *stationName)
 {
 	// Set text colour and background
 	tft.setTextColor(TFT_YELLOW, TFT_BLACK);

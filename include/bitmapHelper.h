@@ -13,7 +13,7 @@ void drawBmp(const char *filename, int16_t x, int16_t y) {
   fs::File bmpFS;
 
   // Open requested file on SD card
-  bmpFS = LITTLEFS.open(filename, "r");
+  bmpFS = LittleFS.open(filename, "r");
 
   if (!bmpFS)
   {

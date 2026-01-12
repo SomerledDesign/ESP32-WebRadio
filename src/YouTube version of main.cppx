@@ -13,7 +13,7 @@ void setup()
 	initDisplay();
 
 	// Initialise LITTLEFS system
-	if (!LITTLEFS.begin(false))
+	if (!LittleFS.begin(false))
 	{
 		Serial.println("LITTLEFS Mount Failed.");
 		while (1)
@@ -73,7 +73,7 @@ void setup()
 
 	// Some sort of startup message
 	// TODO change to MP3 file on LITTLEFS
-	File file = LITTLEFS.open("/Intro.mp3");
+	File file = LittleFS.open("/Intro.mp3");
 	if (file)
 	{
 		uint8_t audioBuffer[32] __attribute__ ((aligned(4)));
@@ -358,7 +358,7 @@ std::string readLITTLEFSInfo(char *itemRequired)
 	Serial.printf("Looking for key '%s'.\n", itemRequired);
 
 	// Get a handle to the file
-	File configFile = LITTLEFS.open("/WiFiSecrets.txt", FILE_READ);
+	File configFile = LittleFS.open("/WiFiSecrets.txt", FILE_READ);
 	if (!configFile)
 	{
 		// TODO: Display error on screen

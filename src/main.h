@@ -32,19 +32,19 @@
 #include <cbuf.h>
 
 // EEPROM writing routines (eg: remembers previous radio stn)
-Preferences preferences;
+extern Preferences preferences;
 
 // Station index/number
-unsigned int currStnNo, prevStnNo;
-signed int nextStnNo;
+extern unsigned int currStnNo, prevStnNo;
+extern signed int nextStnNo;
 
 // Secret WiFi stuff from include/secrets.h
-std::string ssid;
-std::string wifiPassword;
-bool wiFiDisconnected = true;
+extern std::string ssid;
+extern std::string wifiPassword;
+extern bool wiFiDisconnected;
 
 // All connections are assumed insecure http:// not https://
-const int8_t stationCnt = 8; // start counting from 1!
+const int8_t stationCnt = 64; // start counting from 1!
 
 /* 
     Example URL: [port optional, 80 assumed]
@@ -58,94 +58,37 @@ struct radioStationLayout
 	int port;
 	char friendlyName[64];
 	uint8_t useMetaData;
+	char genre[32];
 };
 
-struct radioStationLayout radioStation[stationCnt] = {
-
-	//0
-	"stream.antenne1.de",
-	"/a1stg/livestream1.aac",
-	80,
-	"Antenne1.de",
-	1,
-
-	//1
-	"bbcmedia.ic.llnwd.net",
-	"/stream/bbcmedia_radio4fm_mf_q", // also mf_p works
-	80,
-	"BBC Radio 4",
-	0,
-
-	//2
-	"stream.antenne1.de",
-	"/a1stg/livestream2.mp3",
-	80,
-	"Antenne1 128k",
-	1,
-
-	//3
-	"listen.181fm.com",
-	"/181-beatles_128k.mp3",
-	80,
-	"Beatles 128k",
-	1,
-
-	//4
-	"stream-mz.planetradio.co.uk",
-	"/magicmellow.mp3",
-	80,
-	"Mellow Magic (Redirected)",
-	1,
-
-	//5
-	"edge-bauermz-03-gos2.sharp-stream.com",
-	"/net2national.mp3",
-	80,
-	"Greatest Hits 112k (National)",
-	1,
-
-	//6
-	"airspectrum.cdnstream1.com",
-	"/1302_192",
-	8024,
-	"Mowtown Magic Oldies",
-	1,
-
-	//7
-	"live-bauer-mz.sharp-stream.com",
-	"/magicmellow.aac",
-	80,
-	"Mellow Magic (48k AAC)",
-	1,
-
-};
+extern const radioStationLayout *radioStation;
 
 // Pushbutton connected to this pin to change station
-int stnChangePin = 13;
-int tftTouchedPin = 15;
-uint prevTFTBright;
+extern int stnChangePin;
+extern int tftTouchedPin;
+extern uint prevTFTBright;
 
 // Can we use the above button (not in the middle of changing stations)?
-bool canChangeStn = true;
+extern bool canChangeStn;
 
 // Current state of WiFi (connected, idling)
-int status = WL_IDLE_STATUS;
+extern int status;
 
 // Do we want to connect with track/artist info (metadata)
-bool METADATA = true;
+extern bool METADATA;
 
 // Whether to request ICY data or not. Overridden if set to 0 in radio stations.
 #define ICYDATAPIN 36 // Input only pin, requires pull-up 10K resistor
 
 // The number of bytes between metadata (title track)
-uint16_t metaDataInterval = 0; //bytes
-uint16_t bytesUntilmetaData = 0;
-int bitRate = 0;
-bool redirected = false;
-bool volumeMax = false;
+extern uint16_t metaDataInterval; //bytes
+extern uint16_t bytesUntilmetaData;
+extern int bitRate;
+extern bool redirected;
+extern bool volumeMax;
 
 // Dedicated 32-byte buffer for VS1053 aligned on 4-byte boundary for efficiency
-uint8_t mp3buff[32] __attribute__((aligned(4)));
+extern uint8_t mp3buff[32] __attribute__((aligned(4)));
 
 // Circular "Read Buffer" to stop stuttering on some stations
 #ifdef BOARD_HAS_PSRAM
@@ -153,11 +96,11 @@ uint8_t mp3buff[32] __attribute__((aligned(4)));
 #else
 #define CIRCULARBUFFERSIZE 10000
 #endif
-cbuf circBuffer(10);
+extern cbuf circBuffer;
 #define streamingCharsMax 32
 
 // Internet stream buffer that we copy in chunks to the ring buffer
-char readBuffer[100] __attribute__((aligned(4)));
+extern char readBuffer[100] __attribute__((aligned(4)));
 
 // Wiring of VS1053 board (SPI connected in a standard way) on ESP32 only
 #define VS1053_CS 32
@@ -176,11 +119,12 @@ std::string getSSID();
 void connectToWifi();
 const char *wl_status_to_string(wl_status_t status);
 void initDisplay();
+bool loadStationsFromLittleFS(const char *path = "/stations.xml");
 void changeStation(int8_t plusOrMinus);
 bool _GLIBCXX_ALWAYS_INLINE readMetaData();
 void getRedirectedStationInfo(String header, int currStationNo);
 void setupDisplayModule();
-void displayStationName(char *stationName);
+void displayStationName(const char *stationName);
 void displayTrackArtist(std::string);
 
 bool getNextButtonPress(uint16_t x, uint16_t y);
@@ -203,15 +147,15 @@ void populateRingBuffer();
 
 void taskSetup();
 
-// Not Best Practice but I'm instantiating all objects here to remove them from main.cpp
+// Global objects are defined in src/globals.cpp
 
 // MP3 decoder
-VS1053 player(VS1053_CS, VS1053_DCS, VS1053_DREQ);
+extern VS1053 player;
 
 // Instantiate screen (object) using hardware SPI. Defaults to 320H x 240W
-TFT_eSPI tft = TFT_eSPI();
+extern TFT_eSPI tft;
 
 // Start the WiFi client here
-WiFiClient client;
+extern WiFiClient client;
 
 #endif

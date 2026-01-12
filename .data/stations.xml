@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<stations>
+  <!-- One station per line. Attributes: host, path, port, name, useMetaData, genre -->
+  <station host="stream.antenne1.de" path="/a1stg/livestream1.aac" port="80" name="Antenne1.de" useMetaData="1" genre="Unknown" />
+  <station host="bbcmedia.ic.llnwd.net" path="/stream/bbcmedia_radio4fm_mf_q" port="80" name="BBC Radio 4" useMetaData="0" genre="Unknown" />
+  <station host="stream.antenne1.de" path="/a1stg/livestream2.mp3" port="80" name="Antenne1 128k" useMetaData="1" genre="Unknown" />
+  <station host="listen.181fm.com" path="/181-beatles_128k.mp3" port="80" name="Beatles 128k" useMetaData="1" genre="Unknown" />
+  <station host="stream-mz.planetradio.co.uk" path="/magicmellow.mp3" port="80" name="Mellow Magic (Redirected)" useMetaData="1" genre="Unknown" />
+  <station host="edge-bauermz-03-gos2.sharp-stream.com" path="/net2national.mp3" port="80" name="Greatest Hits 112k (National)" useMetaData="1" genre="Unknown" />
+  <station host="airspectrum.cdnstream1.com" path="/1302_192" port="8024" name="Mowtown Magic Oldies" useMetaData="1" genre="Unknown" />
+  <station host="live-bauer-mz.sharp-stream.com" path="/magicmellow.aac" port="80" name="Mellow Magic (48k AAC)" useMetaData="1" genre="Unknown" />
+  <station host="stream.live.vc.bbcmedia.co.uk" path="/bbc_world_service" port="80" name="BBC World Service" useMetaData="1" genre="Unknown" />
+  <station host="icecast.vgtrk.cdnvideo.ru" path="/vestifm_mp3_192kbps" port="80" name="(Vesti FM)" useMetaData="1" genre="Unknown" />
+  <station host="kpradio.hostingradio.ru" path="/russia.radiokp128.mp3" port="8000" name="|" useMetaData="1" genre="Unknown" />
+  <station host="jking.cdnstream1.com" path="/b22139_128mp3" port="80" name="101 SMOOTH JAZZ" useMetaData="1" genre="Unknown" />
+  <station host="live.humorfm.by" path="/veseloeradio" port="8000" name="FM" useMetaData="1" genre="Unknown" />
+  <station host="radio.mixto.ru" path="/patriot" port="8001" name="Station" useMetaData="1" genre="Unknown" />
+  <station host="ic6.101.ru" path="/stream/air/aac/64/202" port="8000" name="Comedy Radio new link" useMetaData="1" genre="Unknown" />
+  <station host="stream-uk1.radioparadise.com" path="/aac-320" port="80" name="Radio Paradise Main Mix (EU) 320k AAC" useMetaData="1" genre="Unknown" />
+  <station host="icecast.stv.livebox.sk" path="/regina-ke_128.mp3" port="80" name="SRo2 Radio Regina Vychod" useMetaData="1" genre="Unknown" />
+  <station host="162.244.80.52" path="/stream.mp3" port="8732" name="Akaboozi FM 87.9" useMetaData="1" genre="Unknown" />
+  <station host="live.slovakradio.sk" path="/Slovensko_256.mp3" port="8000" name="SRo1 Radio Slovensko (256k)" useMetaData="1" genre="Unknown" />
+  <station host="ic4.101.ru" path="/v3_1" port="8000" name="- FM 90.3 -" useMetaData="1" genre="Unknown" />
+  <station host="retroserver.streamr.ru" path="/retro256.mp3" port="8043" name="FM" useMetaData="1" genre="Unknown" />
+  <station host="bookradio.hostingradio.ru" path="/fm" port="8069" name="Station" useMetaData="1" genre="Unknown" />
+  <station host="67.249.184.45" path="/" port="8015" name="Hard Rock Radio FM" useMetaData="0" genre="Unknown" />
+  <station host="ep256.hostingradio.ru" path="/europaplus256.mp3" port="8052" name="Europa Plus" useMetaData="1" genre="Unknown" />
+  <station host="icecast.vgtrk.cdnvideo.ru" path="/vestifm" port="80" name="FM" useMetaData="1" genre="Unknown" />
+  <station host="icecast.omroep.nl" path="/radio2-bb-mp3" port="80" name="NPO 2" useMetaData="1" genre="Unknown" />
+  <station host="s5.voscast.com" path="/EYOBUJJAJJA" port="9908" name="CBS 88.8" useMetaData="1" genre="Unknown" />
+  <station host="s5.voscast.com" path="/EMMANDUSO" port="9904" name="89.2 CBS Emanduso" useMetaData="1" genre="Unknown" />
+  <station host="dorognoe.hostingradio.ru" path="/radio" port="8000" name="Station" useMetaData="1" genre="Unknown" />
+  <station host="chanson.hostingradio.ru" path="/chanson128.mp3" port="8041" name="Station" useMetaData="1" genre="Unknown" />
+  <station host="jazzblues.ice.infomaniak.ch" path="/jazzblues-high.mp3" port="80" name="Jazz Radio Blues" useMetaData="1" genre="Unknown" />
+  <station host="162.244.80.52" path="/stream" port="8732" name="Akaboozi 87.9 FM" useMetaData="1" genre="Unknown" />
+  <station host="194.5.152.248" path="/dono" port="8000" name="Oriat Dono" useMetaData="1" genre="Unknown" />
+  <station host="dorognoe.hostingradio.ru" path="/dorognoe" port="8000" name="(Dorognoe Radio)" useMetaData="1" genre="Unknown" />
+  <station host="prmstrm.1.fm" path="/deephouse" port="8000" name="Deep House Sunset Mix" useMetaData="1" genre="Unknown" />
+  <station host="195.150.20.242" path="/rmf_fm" port="8000" name="RMF FM" useMetaData="1" genre="Unknown" />
+  <station host="fm939.wnyc.org" path="/wnycfm.aac" port="80" name="WNYC 93.9 FM" useMetaData="1" genre="Unknown" />
+  <station host="orf-live.ors-shoutcast.at" path="/oe1-q2a" port="80" name="O1 | ORF | HQ" useMetaData="1" genre="Unknown" />
+  <station host="pub0101.101.ru" path="/stream/air/aac/64/102" port="8000" name="FM" useMetaData="1" genre="Unknown" />
+  <station host="retro.volna.top" path="/Retro" port="80" name="- RETRO HIT" useMetaData="1" genre="Unknown" />
+  <station host="stream.gal.io" path="/arrow" port="80" name="Arrow Classic Rock" useMetaData="1" genre="Unknown" />
+  <station host="listen.rusongs.ru" path="/ru-mp3-128" port="80" name="Station" useMetaData="1" genre="Unknown" />
+  <station host="lw2.mp3.tb-group.fm" path="/tb.mp3" port="80" name="TechnoBase.FM" useMetaData="1" genre="Unknown" />
+  <station host="server1.chilltrax.com" path="/" port="9000" name="Chilltrax" useMetaData="0" genre="Unknown" />
+  <station host="media-ice.musicradio.com" path="/LBCUK" port="80" name="LBC UK" useMetaData="1" genre="Unknown" />
+  <station host="icecast.vgtrk.cdnvideo.ru" path="/mayakfm_mp3_192kbps" port="80" name="(Radio Mayak)" useMetaData="1" genre="Unknown" />
+  <station host="live.antenne.at" path="/as" port="80" name="Antenne Steiermark" useMetaData="1" genre="Unknown" />
+  <station host="live.dancemusic.ro" path="/listen.pls?sid=1" port="7000" name="Deep House Radio - Bucharest Romania" useMetaData="0" genre="Unknown" />
+  <station host="icecast.omroep.nl" path="/radio1-bb-mp3" port="80" name="NPO Radio 1" useMetaData="1" genre="Unknown" />
+  <station host="radio.talksport.com" path="/stream?aisGetOriginalStream=true" port="80" name="talkSPORT" useMetaData="1" genre="Unknown" />
+  <station host="icecast.radiofrance.fr" path="/franceculture-hifi.aac" port="80" name="France Culture" useMetaData="0" genre="Unknown" />
+  <station host="icecast.radiofrance.fr" path="/fip-hifi.aac" port="80" name="FIP" useMetaData="0" genre="Unknown" />
+  <station host="5230.cloudrad.io" path="/live" port="8354" name="Beat FM - Kampala - 96.3 FM (MP3)" useMetaData="1" genre="Unknown" />
+  <station host="195.95.206.17" path="/HitFM" port="80" name="Hit FM (UKraine) - 128kb/s" useMetaData="1" genre="Unknown" />
+  <station host="202.147.199.99" path="/" port="8000" name="Radio Dangdut 97.1 FM Jakarta" useMetaData="1" genre="Unknown" />
+  <station host="peacefulpiano.stream.publicradio.org" path="/peacefulpiano.mp3" port="80" name="Your Classical - Peaceful Piano" useMetaData="1" genre="Unknown" />
+  <station host="bigrradio.cdnstream1.com" path="/5186_128" port="80" name="Big R Radio - 80s Metal FM" useMetaData="1" genre="Unknown" />
+  <station host="159.69.219.5" path="/mp3" port="8010" name="Slobodny vysielac" useMetaData="1" genre="Unknown" />
+  <station host="streamer.psyradio.org" path="/" port="8010" name="psyradio * fm - progressive" useMetaData="1" genre="Unknown" />
+  <station host="26343.live.streamtheworld.com" path="/977_MIX_SC" port="3690" name=".977 The Mix" useMetaData="1" genre="Unknown" />
+  <station host="cast.magicstreams.gr" path="/stream" port="9125" name="Psyndora Chillout" useMetaData="1" genre="Unknown" />
+  <station host="live02.rfi.fr" path="/rfiafrique-64.mp3" port="80" name="RFI Afrique" useMetaData="1" genre="Unknown" />
+  <station host="stream01.superfly.fm" path="/live128" port="8080" name="Superfly FM" useMetaData="1" genre="Unknown" />
+  <station host="naxi128.streaming.rs" path="/" port="9150" name="Naxi Radio" useMetaData="0" genre="Unknown" />
+</stations>

@@ -3,6 +3,13 @@
 #include "tftHelpers.h"
 #include "wifiHelpers.h"
 #include "taskHelper.h"
+#include "lvglHelpers.h"
+
+namespace {
+	char redirectedHost[64] = "";
+	char redirectedPath[128] = "";
+	int redirectedPort = 80;
+}
 
 // ==================================================================================
 // setup	setup	setup	setup	setup	setup	setup	setup	setup
@@ -31,12 +38,13 @@ void setup()
 
 	// Start the display so we can show connection/hardware errors on it
 	initDisplay();
+	initLvgl();
 
 	//How much SRAM free (heap memory)
 	Serial.printf("Free memory: %d bytes\n", ESP.getFreeHeap());
 
 	// Initialise LITTLEFS system
-	if (!LITTLEFS.begin(false))
+	if (!LittleFS.begin(false))
 	{
 		Serial.println("LITTLEFS Mount Failed.");
 		tft.println("LITTLEFS Mount Failed.");
@@ -46,6 +54,15 @@ void setup()
 	else
 	{
 		Serial.println("LITTLEFS Mount SUCCESSFUL.");
+
+		if (loadStationsFromLittleFS("/stations.xml"))
+		{
+			Serial.println("Loaded stations from LittleFS.");
+		}
+		else
+		{
+			Serial.println("Using built-in station list.");
+		}
 	}
 
 	// VS1053 MP3 decoder
@@ -82,7 +99,7 @@ void setup()
 
 	// Some sort of startup message (I just recorded this using
 	// https://onlinetonegenerator.com/voice-generator.html)
-	File file = LITTLEFS.open("/Intro.mp3");
+	File file = LittleFS.open("/Intro.mp3");
 	if (file)
 	{
 		uint8_t audioBuffer[32] __attribute__((aligned(4)));
@@ -230,6 +247,8 @@ void loop()
 	// Screen brightness
 	getBrightButtonPress();
 	getDimButtonPress();
+
+	lvglTaskHandler();
 }
 
 // Populate ring buffer with streaming data
@@ -313,6 +332,10 @@ bool stationConnect(int stationNo)
 	bool connected = false;
 	int connectAttempt = 0;
 
+	const char *host = redirected ? redirectedHost : radioStation[stationNo].host;
+	const char *path = redirected ? redirectedPath : radioStation[stationNo].path;
+	int port = redirected ? redirectedPort : radioStation[stationNo].port;
+
 	while (!connected && connectAttempt < 5)
 	{
 		if (redirected)
@@ -321,10 +344,10 @@ bool stationConnect(int stationNo)
 		}
 
 		connectAttempt++;
-		Serial.printf("Host: %s Port:%d\n", radioStation[stationNo].host, radioStation[stationNo].port);
+		Serial.printf("Host: %s Port:%d\n", host, port);
 
 		// Connect to the redirected URL
-		if (client.connect(radioStation[stationNo].host, radioStation[stationNo].port))
+		if (client.connect(host, port))
 		{
 			connected = true;
 		}
@@ -333,23 +356,23 @@ bool stationConnect(int stationNo)
 	// If we could not connect (eg bad URL) just exit
 	if (!connected)
 	{
-		Serial.printf("Could not connect to %s\n", radioStation[stationNo].host);
+		Serial.printf("Could not connect to %s\n", host);
 		return false;
 	}
 	else
 	{
 		Serial.printf("Connected to %s (%s%s)\n",
-					  radioStation[stationNo].host, radioStation[stationNo].friendlyName,
+					  host, radioStation[stationNo].friendlyName,
 					  redirected ? " - redirected" : "");
 	}
 
 	// Get the data stream plus any metadata (eg station name, track info between songs / ads)
 	// TODO: Allow retries here (BBC Radio 4 very finicky before streaming).
 	// We might also get a redirection URL given back.
-	Serial.printf("Getting data from %s (%s Metadata)\n", radioStation[stationNo].path, (METADATA ? "WITH" : "WITHOUT"));
+	Serial.printf("Getting data from %s (%s Metadata)\n", path, (METADATA ? "WITH" : "WITHOUT"));
 	client.print(
-		String("GET ") + radioStation[stationNo].path + " HTTP/1.1\r\n" +
-		"Host: " + radioStation[stationNo].host + "\r\n" +
+		String("GET ") + path + " HTTP/1.1\r\n" +
+		"Host: " + host + "\r\n" +
 		(METADATA ? "Icy-MetaData:1\r\n" : "") +
 		"Connection: close\r\n\r\n");
 
@@ -456,7 +479,7 @@ std::string readLITTLEFSInfo(char *itemRequired)
 	Serial.printf("Looking for key '%s'.\n", itemRequired);
 
 	// Get a handle to the file
-	File configFile = LITTLEFS.open("/WiFiSecrets.txt", FILE_READ);
+	File configFile = LittleFS.open("/WiFiSecrets.txt", FILE_READ);
 	if (!configFile)
 	{
 		// TODO: Display error on screen
@@ -695,11 +718,11 @@ void getRedirectedStationInfo(String header, int currStationNo)
 	Serial.println("--------------------------------------");
 
 	// Placeholders for the new host/path
-	String redirectedHost = "";
-	String redirectedPath = "";
+	String newHost = "";
+	String newPath = "";
 
 	// We'll assume the port is 80 unless we find one in the host name
-	int redirectedPort = 80;
+	int newPort = 80;
 
 	// Skip the "redirected http://" bit at the front
 	header = header.substring(17);
@@ -709,28 +732,32 @@ void getRedirectedStationInfo(String header, int currStationNo)
 	int pathDelimiter = header.indexOf("/");
 	if (pathDelimiter > 0)
 	{
-		redirectedPath = header.substring(pathDelimiter);
-		redirectedHost = header.substring(0, pathDelimiter);
+		newPath = header.substring(pathDelimiter);
+		newHost = header.substring(0, pathDelimiter);
 	}
 	// Look to split host into host and port number
 	// Example: stream/myradio.de:8080
-	int portDelimter = header.indexOf(":");
-	if (portDelimter > 0)
+	int portDelimiter = newHost.indexOf(":");
+	if (portDelimiter > 0)
 	{
-		redirectedPort = header.substring(portDelimter + 1).toInt();
+		newPort = newHost.substring(portDelimiter + 1).toInt();
 
 		// Adjust the host name to exclude the port information
-		redirectedHost = redirectedHost.substring(0, portDelimter);
+		newHost = newHost.substring(0, portDelimiter);
 	}
 
-	// Just overwrite the current entry for this station (reverts on reboot)
-	// TODO: consider writing all this to EEPROM / SPIFFS
-	Serial.println("New address: " + redirectedHost + redirectedPath + ":" + redirectedPort);
-	strncpy(radioStation[currStationNo].host, redirectedHost.c_str(), 64);
-	strncpy(radioStation[currStationNo].path, redirectedPath.c_str(), 128);
+	// Store redirect target for this session (reverts on reboot)
+	Serial.println("New address: " + newHost + newPath + ":" + newPort);
+	strncpy(redirectedHost, newHost.c_str(), sizeof(redirectedHost) - 1);
+	redirectedHost[sizeof(redirectedHost) - 1] = '\0';
+	strncpy(redirectedPath, newPath.c_str(), sizeof(redirectedPath) - 1);
+	redirectedPath[sizeof(redirectedPath) - 1] = '\0';
+	redirectedPort = newPort;
 
+	(void)currStationNo;
 	return;
 }
+
 
 // Change station button / screen button pressed?
 void checkForStationChange()

@@ -1,0 +1,514 @@
+[
+  {
+    "host": "stream.antenne1.de",
+    "path": "/a1stg/livestream1.aac",
+    "port": 80,
+    "friendlyName": "Antenne1.de",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "bbcmedia.ic.llnwd.net",
+    "path": "/stream/bbcmedia_radio4fm_mf_q",
+    "port": 80,
+    "friendlyName": "BBC Radio 4",
+    "useMetaData": 0,
+    "genre": "Unknown"
+  },
+  {
+    "host": "stream.antenne1.de",
+    "path": "/a1stg/livestream2.mp3",
+    "port": 80,
+    "friendlyName": "Antenne1 128k",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "listen.181fm.com",
+    "path": "/181-beatles_128k.mp3",
+    "port": 80,
+    "friendlyName": "Beatles 128k",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "stream-mz.planetradio.co.uk",
+    "path": "/magicmellow.mp3",
+    "port": 80,
+    "friendlyName": "Mellow Magic (Redirected)",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "edge-bauermz-03-gos2.sharp-stream.com",
+    "path": "/net2national.mp3",
+    "port": 80,
+    "friendlyName": "Greatest Hits 112k (National)",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "airspectrum.cdnstream1.com",
+    "path": "/1302_192",
+    "port": 8024,
+    "friendlyName": "Mowtown Magic Oldies",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "live-bauer-mz.sharp-stream.com",
+    "path": "/magicmellow.aac",
+    "port": 80,
+    "friendlyName": "Mellow Magic (48k AAC)",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "stream.live.vc.bbcmedia.co.uk",
+    "path": "/bbc_world_service",
+    "port": 80,
+    "friendlyName": "BBC World Service",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "icecast.vgtrk.cdnvideo.ru",
+    "path": "/vestifm_mp3_192kbps",
+    "port": 80,
+    "friendlyName": "(Vesti FM)",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "kpradio.hostingradio.ru",
+    "path": "/russia.radiokp128.mp3",
+    "port": 8000,
+    "friendlyName": "|",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "jking.cdnstream1.com",
+    "path": "/b22139_128mp3",
+    "port": 80,
+    "friendlyName": "101 SMOOTH JAZZ",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "live.humorfm.by",
+    "path": "/veseloeradio",
+    "port": 8000,
+    "friendlyName": "FM",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "radio.mixto.ru",
+    "path": "/patriot",
+    "port": 8001,
+    "friendlyName": "Station",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "ic6.101.ru",
+    "path": "/stream/air/aac/64/202",
+    "port": 8000,
+    "friendlyName": "Comedy Radio new link",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "stream-uk1.radioparadise.com",
+    "path": "/aac-320",
+    "port": 80,
+    "friendlyName": "Radio Paradise Main Mix (EU) 320k AAC",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "icecast.stv.livebox.sk",
+    "path": "/regina-ke_128.mp3",
+    "port": 80,
+    "friendlyName": "SRo2 Radio Regina Vychod",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "162.244.80.52",
+    "path": "/stream.mp3",
+    "port": 8732,
+    "friendlyName": "Akaboozi FM 87.9",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "live.slovakradio.sk",
+    "path": "/Slovensko_256.mp3",
+    "port": 8000,
+    "friendlyName": "SRo1 Radio Slovensko (256k)",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "ic4.101.ru",
+    "path": "/v3_1",
+    "port": 8000,
+    "friendlyName": "- FM 90.3 -",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "retroserver.streamr.ru",
+    "path": "/retro256.mp3",
+    "port": 8043,
+    "friendlyName": "FM",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "bookradio.hostingradio.ru",
+    "path": "/fm",
+    "port": 8069,
+    "friendlyName": "Station",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "67.249.184.45",
+    "path": "/",
+    "port": 8015,
+    "friendlyName": "Hard Rock Radio FM",
+    "useMetaData": 0,
+    "genre": "Unknown"
+  },
+  {
+    "host": "ep256.hostingradio.ru",
+    "path": "/europaplus256.mp3",
+    "port": 8052,
+    "friendlyName": "Europa Plus",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "icecast.vgtrk.cdnvideo.ru",
+    "path": "/vestifm",
+    "port": 80,
+    "friendlyName": "FM",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "icecast.omroep.nl",
+    "path": "/radio2-bb-mp3",
+    "port": 80,
+    "friendlyName": "NPO 2",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "s5.voscast.com",
+    "path": "/EYOBUJJAJJA",
+    "port": 9908,
+    "friendlyName": "CBS 88.8",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "s5.voscast.com",
+    "path": "/EMMANDUSO",
+    "port": 9904,
+    "friendlyName": "89.2 CBS Emanduso",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "dorognoe.hostingradio.ru",
+    "path": "/radio",
+    "port": 8000,
+    "friendlyName": "Station",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "chanson.hostingradio.ru",
+    "path": "/chanson128.mp3",
+    "port": 8041,
+    "friendlyName": "Station",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "jazzblues.ice.infomaniak.ch",
+    "path": "/jazzblues-high.mp3",
+    "port": 80,
+    "friendlyName": "Jazz Radio Blues",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "162.244.80.52",
+    "path": "/stream",
+    "port": 8732,
+    "friendlyName": "Akaboozi 87.9 FM",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "194.5.152.248",
+    "path": "/dono",
+    "port": 8000,
+    "friendlyName": "Oriat Dono",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "dorognoe.hostingradio.ru",
+    "path": "/dorognoe",
+    "port": 8000,
+    "friendlyName": "(Dorognoe Radio)",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "prmstrm.1.fm",
+    "path": "/deephouse",
+    "port": 8000,
+    "friendlyName": "Deep House Sunset Mix",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "195.150.20.242",
+    "path": "/rmf_fm",
+    "port": 8000,
+    "friendlyName": "RMF FM",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "fm939.wnyc.org",
+    "path": "/wnycfm.aac",
+    "port": 80,
+    "friendlyName": "WNYC 93.9 FM",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "orf-live.ors-shoutcast.at",
+    "path": "/oe1-q2a",
+    "port": 80,
+    "friendlyName": "O1 | ORF | HQ",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "pub0101.101.ru",
+    "path": "/stream/air/aac/64/102",
+    "port": 8000,
+    "friendlyName": "FM",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "retro.volna.top",
+    "path": "/Retro",
+    "port": 80,
+    "friendlyName": "- RETRO HIT",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "stream.gal.io",
+    "path": "/arrow",
+    "port": 80,
+    "friendlyName": "Arrow Classic Rock",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "listen.rusongs.ru",
+    "path": "/ru-mp3-128",
+    "port": 80,
+    "friendlyName": "Station",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "lw2.mp3.tb-group.fm",
+    "path": "/tb.mp3",
+    "port": 80,
+    "friendlyName": "TechnoBase.FM",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "server1.chilltrax.com",
+    "path": "/",
+    "port": 9000,
+    "friendlyName": "Chilltrax",
+    "useMetaData": 0,
+    "genre": "Unknown"
+  },
+  {
+    "host": "media-ice.musicradio.com",
+    "path": "/LBCUK",
+    "port": 80,
+    "friendlyName": "LBC UK",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "icecast.vgtrk.cdnvideo.ru",
+    "path": "/mayakfm_mp3_192kbps",
+    "port": 80,
+    "friendlyName": "(Radio Mayak)",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "live.antenne.at",
+    "path": "/as",
+    "port": 80,
+    "friendlyName": "Antenne Steiermark",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "live.dancemusic.ro",
+    "path": "/listen.pls?sid=1",
+    "port": 7000,
+    "friendlyName": "Deep House Radio - Bucharest Romania",
+    "useMetaData": 0,
+    "genre": "Unknown"
+  },
+  {
+    "host": "icecast.omroep.nl",
+    "path": "/radio1-bb-mp3",
+    "port": 80,
+    "friendlyName": "NPO Radio 1",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "radio.talksport.com",
+    "path": "/stream?aisGetOriginalStream=true",
+    "port": 80,
+    "friendlyName": "talkSPORT",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "icecast.radiofrance.fr",
+    "path": "/franceculture-hifi.aac",
+    "port": 80,
+    "friendlyName": "France Culture",
+    "useMetaData": 0,
+    "genre": "Unknown"
+  },
+  {
+    "host": "icecast.radiofrance.fr",
+    "path": "/fip-hifi.aac",
+    "port": 80,
+    "friendlyName": "FIP",
+    "useMetaData": 0,
+    "genre": "Unknown"
+  },
+  {
+    "host": "5230.cloudrad.io",
+    "path": "/live",
+    "port": 8354,
+    "friendlyName": "Beat FM - Kampala - 96.3 FM (MP3)",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "195.95.206.17",
+    "path": "/HitFM",
+    "port": 80,
+    "friendlyName": "Hit FM (UKraine) - 128kb/s",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "202.147.199.99",
+    "path": "/",
+    "port": 8000,
+    "friendlyName": "Radio Dangdut 97.1 FM Jakarta",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "peacefulpiano.stream.publicradio.org",
+    "path": "/peacefulpiano.mp3",
+    "port": 80,
+    "friendlyName": "Your Classical - Peaceful Piano",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "bigrradio.cdnstream1.com",
+    "path": "/5186_128",
+    "port": 80,
+    "friendlyName": "Big R Radio - 80s Metal FM",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "159.69.219.5",
+    "path": "/mp3",
+    "port": 8010,
+    "friendlyName": "Slobodny vysielac",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "streamer.psyradio.org",
+    "path": "/",
+    "port": 8010,
+    "friendlyName": "psyradio * fm - progressive",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "26343.live.streamtheworld.com",
+    "path": "/977_MIX_SC",
+    "port": 3690,
+    "friendlyName": ".977 The Mix",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "cast.magicstreams.gr",
+    "path": "/stream",
+    "port": 9125,
+    "friendlyName": "Psyndora Chillout",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "live02.rfi.fr",
+    "path": "/rfiafrique-64.mp3",
+    "port": 80,
+    "friendlyName": "RFI Afrique",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "stream01.superfly.fm",
+    "path": "/live128",
+    "port": 8080,
+    "friendlyName": "Superfly FM",
+    "useMetaData": 1,
+    "genre": "Unknown"
+  },
+  {
+    "host": "naxi128.streaming.rs",
+    "path": "/",
+    "port": 9150,
+    "friendlyName": "Naxi Radio",
+    "useMetaData": 0,
+    "genre": "Unknown"
+  }
+]
