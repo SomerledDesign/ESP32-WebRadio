@@ -4,6 +4,7 @@
 
 // Bitmap display helper (Bodmer's)
 #include "bitmapHelper.h"
+#include "lvglHelpers.h"
 
 // IMPORTANT: you MUST run the touch calibration sketch to store the values
 // for future runs of the sketch (ie run once, in the orientation you expect
@@ -444,18 +445,32 @@ void displayStationName(const char *stationName)
 
 void displayTrackArtist(std::string trackArtist)
 {
-	// Set text colour and background
-	tft.setTextColor(TFT_GREEN, TFT_BLACK);
+	std::string track = "";
+	std::string artist = "";
+	std::string album = "";
 
-	// Clear the remainder of the line from before (eg long title)
-	tft.fillRect(0, 100, 320, 50, TFT_BLACK);
+	if (!trackArtist.empty())
+	{
+		size_t first = trackArtist.find(" - ");
+		if (first == std::string::npos)
+		{
+			track = trackArtist;
+		}
+		else
+		{
+			artist = trackArtist.substr(0, first);
+			size_t second = trackArtist.find(" - ", first + 3);
+			if (second == std::string::npos)
+			{
+				track = trackArtist.substr(first + 3);
+			}
+			else
+			{
+				track = trackArtist.substr(first + 3, second - (first + 3));
+				album = trackArtist.substr(second + 3);
+			}
+		}
+	}
 
-	// Write artist / track info
-	tft.setFreeFont(&FreeSans9pt7b);
-	tft.setTextSize(1);
-	tft.setCursor(0, 120);
-	tft.print(trackArtist.c_str());
-
-	// Restore mute button because for this test prog we have splatted it with the artist info
-	//drawMuteButton(isMutedState);
+	lvglUpdateTrackInfo(track.c_str(), artist.c_str(), album.c_str());
 }

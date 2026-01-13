@@ -31,15 +31,14 @@
 - [ ] Convert text buttons to bitmap assets and expose button coordinates (tftHelpers.h TODOs).
 - [ ] Replace buffer-level magic numbers with named constants (tftHelpers.h TODO).
 - [ ] Display bitrate, SSID/RSSI, and connection progress on TFT (ToDo.h #3/#15/#18).
-- [ ] Split Artist/Track into separate lines with word-safe wrapping (ToDo.h #4/#5).
+- [x] ~Split Artist/Track into separate lines with word-safe wrapping (ToDo.h #4/#5).~
 - [ ] Optional station list web editor (ToDo.h #8).
 - [ ] Mute until buffer stable after station change (ToDo.h #10).
 - [ ] Explore Bluetooth audio input (ToDo.h #11).
 
 ## Milestones (Recommended)
 1. Baseline compile + smoke test on current hardware (no functional changes).
-2. Decide LVGL v9 display driver (TFT_eSPI vs alternative), integrate LVGL, verify basic display + touch input.
-3. Port current UI to LVGL (station name, track text, buffer %, buttons).
+2. LVGL v9 integration + initial UI port (driver choice, display + touch input, station name, track text, buffer %, buttons).
   - List of things to include on the display ; Minimums
     - Station ID
     - Track Text (Artist, Track Name, Album, et al)
@@ -49,8 +48,9 @@
     - WiFi Strength
     - Country of Origin of the Feed
     - Time/Day/Date in header?
-4. Robustness pass (error display, reconnect logic, HTTP status checks, remove redirect hack, debug gating).
-5. Enhancements (bitrate/SSID display, metadata formatting, station list management).
+3. Robustness pass (error display, reconnect logic, HTTP status checks, remove redirect hack, debug gating).
+4. Enhancements (bitrate/SSID display, metadata formatting, station list management).
 
 ## Notes
+- LVGL simulator (macOS): `pio run -e sim` (requires SDL2 installed via Homebrew).
 - Legacy/alternate code: `src/YouTube version of main.cppx` is not compiled by PlatformIO.

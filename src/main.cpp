@@ -325,6 +325,7 @@ bool stationConnect(int stationNo)
 
 	// Clear down any screen info
 	displayStationName(radioStation[stationNo].friendlyName);
+	lvglUpdateGenre(radioStation[stationNo].genre);
 	displayTrackArtist((char *)"");
 	drawBufferLevel(0, true);
 
